@@ -1,0 +1,23 @@
+.country {
+  border: 1px solid tomato;
+  padding: 20px;
+  text-align: center;
+  color: rgb(28, 5, 51);
+  background-color: rgb(163, 101, 90);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.country p {
+  color: rgb(233, 198, 198);
+  font-size: larger;
+  font-weight: 900;
+}
+
+#country {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
