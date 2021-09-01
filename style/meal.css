@@ -22,3 +22,6 @@ hr {
   font-size: 100px;
   background-color: turquoise;
 }
+#spinner {
+  display: none;
+}

@@ -1,7 +1,15 @@
+const toggleSpinner = displayStyle => {
+  document.getElementById('spinner').style.display = displayStyle;
+};
+const toggleSearchResult = displayStyle => {
+  document.getElementById('search-result').style.display = displayStyle;
+};
+
 const searchFood = () => {
   const searchField = document.querySelector('#search-field');
   const searchText = searchField.value;
-  console.log(searchText);
+  toggleSpinner('block');
+  toggleSearchResult('none');
   searchField.value = '';
   if (searchText === '') {
     const error = document.querySelector('#error');
@@ -19,8 +27,6 @@ const searchFood = () => {
   }
 };
 
-// const displayField = document.querySelector("#display");
-
 function displaySearchResult(meals) {
   //   console.log(meals);
   const searchResult = document.querySelector('#search-result');
@@ -28,7 +34,9 @@ function displaySearchResult(meals) {
   searchResult.textContent = '';
   const meales = meals.meals;
   //   console.log(meales);
-  for (const meal of meales) {
+  // for (const meal of meales) {
+  meales?.forEach(meal => {
+    console.log(meal);
     const instruction = meal.strInstructions;
     const instructions = instruction.slice(0, 200);
     const div = document.createElement('div');
@@ -49,7 +57,9 @@ function displaySearchResult(meals) {
    
     `;
     searchResult.appendChild(div);
-  }
+  });
+  toggleSpinner('none');
+  toggleSearchResult('flex');
 }
 
 const loadMealDetail = mealId => {
